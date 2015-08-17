@@ -11,7 +11,11 @@ RUN npm install gulp -g
 WORKDIR /src
 ADD app/package.json /src/package.json
 ADD app/config.js /src/config.js
+ADD app/bower.json /src/bower.json
+RUN npm install bower -g
+RUN npm install jspm -g
 RUN npm install --unsafe-perm=true
+RUN bower install --allow-root
 
 EXPOSE 49000
 EXPOSE 49900

@@ -1,0 +1,23 @@
+.component-cards {
+  @include span(isolate 14 at 2);
+  @include mq(mobile, tablet){
+    margin-bottom: 1.5rem;
+  }
+  .component-cards__item {
+    @include mq($from: tablet){
+      @include gallery(4 of 12);
+    }
+    @include mq(mobile, tablet){
+      @include span(12 of 12);
+    }
+  }
+  .component-cards__body {
+    padding: 1.5rem 3rem;
+    font-size: map-get($type, 300);
+    color: map-get($palette, 180);
+    font-weight: 300;
+    @include mq(mobile,tablet){
+      padding-bottom: 0;
+    }
+  }
+}

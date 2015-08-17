@@ -17,7 +17,9 @@ System.config({
     "babel": "npm:babel-core@5.8.22",
     "babel-runtime": "npm:babel-runtime@5.8.20",
     "core-js": "npm:core-js@0.9.18",
+    "input-placeholder-polyfill": "npm:input-placeholder-polyfill@1.0.0",
     "jsx": "github:floatdrop/plugin-jsx@1.1.0",
+    "placeholders-2": "npm:placeholders-2@3.0.2",
     "react": "npm:react@0.13.3",
     "github:floatdrop/plugin-jsx@1.1.0": {
       "react-tools": "npm:react-tools@0.13.3"

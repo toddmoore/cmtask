@@ -26,8 +26,8 @@ gulp.task('develop', function(){
     server: {
       baseDir: ['./'],
       routes: {
-        '/jspm_packages': '../jspm_packages',
-        '/config.js': '../config.js'
+        '/jspm_packages': '/src/jspm_packages',
+        '/config.js': '/src/config.js'
       }
     }
   });

@@ -1,0 +1,40 @@
+.component-section {
+  padding: 3rem 0;
+  background-color: map-get($palette, 100);
+  @include transition(all .5s ease-in-out);
+  @at-root {
+    .component-section--main-navigation {
+      padding: $navigationPadding .5rem;
+      border-bottom: 2px solid rgba(map-get($palette,700),.5);
+    }
+    .component-section--reversed {
+      background-color: map-get($palette, 300);
+      color: map-get($palette, 100);
+    }
+    .component-section--fat-top {
+      padding-top: 6rem;
+      @include mq(mobile,tablet){
+        padding-top: 3rem;
+      }
+    }
+    .component-section--sign-up {
+      background-color: map-get($palette, 500);
+    }
+
+    .component-section--footer {
+      background-color: map-get($palette, 600);
+      padding: 1rem 0;
+      small {
+        font-size: map-get($type, 100);
+      }
+    }
+    .component-section--hero {
+      padding-bottom: 0;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      position: relative;
+      overflow: hidden;
+      @include linear-gradient(160deg, #9fabb9 50%,#9ba6b4 50%);
+    }
+  }
+}

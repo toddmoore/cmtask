@@ -1,0 +1,30 @@
+$susy: (
+  columns: 16,
+  gutters: .25,
+  container: 1024px
+);
+
+$type: (
+  100: 0.7rem,
+  200: 0.8rem,
+  300: 0.9rem,
+  700: 2.4rem
+);
+
+$palette: (
+  100: #FFFFFF,
+  120: #f5f8fb,
+  150: #A0B0B9,
+  180: #a3a7ad,
+  200: #9aa6b5,
+  300: #9ba6b4,
+  400: #7a899d,
+  500: #687A94,
+  600: #445065,
+  700: #313844,
+  900: #4899FF,
+  950: #3366A7
+);
+
+$navigationPadding: 1.5rem;
+$navigationRightOffset: 150px;

@@ -1,0 +1,31 @@
+.component-well {
+  clear: left;
+  background-color: map-get($palette, 120);
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  @include span(isolate 14 at 2);
+  .component-well__body {
+    @include push(.7);
+    @include span(7.5);
+    @include mq(mobile, tablet){
+      @include span(14);
+    }
+    .component-well__quote {
+      margin-top: 1.5rem;
+      &:before {
+        color: darken(map-get($palette, 120), 14%);
+      }
+    }
+    .component-well__cite {
+      margin-top: 1.5rem;
+    }
+  }
+  .component-well__image {
+    @include push(1.5 of 14);
+    @include span(3);
+    @include mq(mobile, tablet){
+      @include push(1 of 14);
+      @include span(14);
+    }
+  }
+}

@@ -25,7 +25,8 @@
     "gulp-watch": "~1.1.0",
     "gulp-ruby-sass": "~1.0.1",
     "browser-sync": "^2.6.5",
-    "jspm": "latest"
+    "jspm": "latest",
+    "bower": "latest"
   },
   "author": "Todd Moore",
   "license": "BSD"
