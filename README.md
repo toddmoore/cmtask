@@ -8,7 +8,7 @@ Campaign Monitor Test
   - Component variations are within an `@at-root`
   - Elements that are children of the component are delineated with `__`
 - ReactJS for the form / validation
-  - NB. It could have been simpler for the form / validation. But, I wanted demonstrate my javascript ability. The component I've designed could be expanded upon to be a general purpose form build with i18n support.
+  - NB. It could have been simpler for the form / validation. But, I wanted to demonstrate my JS ability. The component I've designed could be expanded upon to be a general purpose form builder with i18n support.
 
 ### Running local server
 
