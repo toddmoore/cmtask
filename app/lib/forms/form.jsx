@@ -6,10 +6,23 @@ import selectInput from './selectInput.jsx!';
 import checkboxInput from './checkboxInput.jsx!';
 import button from './button.jsx!';
 
-//mixins
+/**
+ * Mixin that includes most of the validation
+ * functions
+ */
 import validations from './mixins/validations';
+
+/**
+ * A few utility type functions that generate variables
+ * from the translation and also creates a few classes.
+ */
 import inputDefaults from './mixins/inputDefaults.jsx!';
 
+/**
+ * Factories that generate the various input types required by form.
+ * `.compose()` is adding that object's prototype to the prototype chain.
+ * See the documentation on Eric Elliot's stampit library.
+ */
 const TextInput = textInput(React).compose(inputDefaults, validations);
 const SelectInput = selectInput(React).compose(inputDefaults, validations);
 const CheckboxInput = checkboxInput(React).compose(inputDefaults, validations);
@@ -22,6 +35,8 @@ export default React => {
     },
     state: {
       fieldTypes: {
+        // I html `type` key reference
+        // to return the expected input
         text: TextInput,
         email: TextInput,
         password: TextInput,
@@ -29,11 +44,24 @@ export default React => {
         checkbox: CheckboxInput,
         button: Button
       },
+      // stores a reference to the fields
+      // not really used other then to trigger a render
       fields: null,
+      // used to check that all fields are valid
+      // for the form
       fieldsValidDict: {},
+      // can be set with a ReactComponent to
+      // display a message
       message: null,
+      // used for signalling the loader
       submitting: false
     },
+    /**
+     * Produces fields components. Requires type text, email ...
+     * @param  {string} type  email, text, select, checkbox ...
+     * @param  {obj} field    obj must have id and layout
+     * @return {<Field />}    Field to be added to the form
+     */
     createField(type, field){
       let Field = this.state.fieldTypes[type];
       let options = field.options ? field.options : null;
@@ -51,6 +79,11 @@ export default React => {
         required={field.required}
         />;
     },
+    /**
+     * Updates the validity dict
+     * @param {string} id        field id
+     * @param {boolean} validity valid=true, invalid=false
+     */
     setFieldValidity(id,validity){
       let fieldsDict = this.state.fieldsValidDict;
       fieldsDict[id] = validity;
@@ -58,6 +91,10 @@ export default React => {
         fieldsValidDict: fieldsDict
       });
     },
+    /**
+     * See React Docs
+     * @return {undefined}
+     */
     componentWillMount(){
       let fields = this.props.fields.map((field)=>{
         return this.createField(field.type, field)
@@ -66,9 +103,18 @@ export default React => {
         fields: fields
       });
     },
+    /**
+     * Updates state with a message to display
+     * @param {string} type    success,validationError
+     * @param {string} message
+     */
     setMessage(type, message){
       return <div className={"js-message-"+type}>{message}</div>
     },
+
+    /**
+     * Handler for the form submit
+     */
     onSubmit(e){
       e.preventDefault();
       this.resetMessage();
@@ -85,6 +131,9 @@ export default React => {
       }
       return this.submit(type, message);
     },
+    /**
+     * Submit simulation
+     */
     submit(type, message){
       // Submission simulation
       setTimeout(()=>{
@@ -95,6 +144,9 @@ export default React => {
         }, this.removeMessageTimeout);
       }, type == 'success' ? 3000 : 0);
     },
+    /**
+     * Used to clear the message
+     */
     resetMessage(){
       clearTimeout(this.removeTimeout);
       this.setState({
@@ -102,6 +154,9 @@ export default React => {
         message: null
       });
     },
+    /**
+     * removes the message timeout
+     */
     removeMessageTimeout(){
       this.removeTimeout = setTimeout(()=>{
         this.setState({
@@ -109,6 +164,9 @@ export default React => {
         })
       }, 10000)
     },
+    /**
+     * React Render function
+     */
     render(){
       return (
         <form

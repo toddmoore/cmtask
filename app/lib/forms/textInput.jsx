@@ -17,7 +17,11 @@ export default React => {
          return this.generateError();
       }
       let {label, ph, error, errorEl} = this.generateTranslations(t);
+
+      // again could be a mixin function as this could be used across all fields
+      // but for the test have just hardcoded it for now.
       let validity = this.props.required ? this.state.validity : null;
+
       return (
         <li className={this.state.classNames.join(' ')} data-valid={validity}>
           <label>

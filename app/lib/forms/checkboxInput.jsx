@@ -22,7 +22,11 @@ export default React => {
          return this.generateError();
       }
       let {label, ph, error, errorEl} = this.generateTranslations(t);
+
+      // additional classes, this should really be a function
+      // on a mixin and I would change this on next steps
       let extraClasses = ' ' + this.state.palette + ' ' + this.state.additionalClases.join(' ')
+
       return (
         <li className={this.state.classNames.join(' ') + extraClasses }>
             <input placeholder={ph}

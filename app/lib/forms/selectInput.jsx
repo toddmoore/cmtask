@@ -16,6 +16,8 @@ export default React => {
          return this.generateError();
       }
       let {label, ph, error, errorEl} = this.generateTranslations(t);
+
+      // generate options for select
       let options = this.props.options.map((item)=>{
         return <option>{item}</option>;
       })

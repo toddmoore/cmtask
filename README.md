@@ -10,6 +10,13 @@ Campaign Monitor Test
 - ReactJS for the form / validation
   - NB. It could have been simpler for the form / validation. But, I wanted to demonstrate my JS ability. The component I've designed could be expanded upon to be a general purpose form builder with i18n support.
 
+### Next Step Considerations
+- The translations could be hooked up to a service to allow for content entry.
+- I considered adding a password strength calculator but decided against it.
+- After I finished the form component I wondered whether the array of form items was a good idea. Perhaps, in next steps, I would probably way up the benefit of making these JSX so that you'd add `<TextInput ...props />`.
+- I'd refactor the validation process to accept patterns and other edge cases, at the moment it's fine but it's bit tightly coupled to input type and that would cause issues for scalability.
+- I would comment the SCSS a lil more so that a styleguide could be generated. As per [SassDoc](http://sassdoc.com/)
+
 ### Running local server
 
 - Install `docker` and `docker-compose` and have the VM running

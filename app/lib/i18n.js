@@ -35,6 +35,11 @@ const translations = {
   }
 }
 
+/**
+ * Function to return translation
+ * @param  {string} language  locale string. e.g en-us
+ * @return {obj}              Translation document
+ */
 export default (language)=> {
   // Could return translations via fetch
   // instead of hardcoding
