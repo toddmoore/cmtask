@@ -1,9 +1,8 @@
 import React from 'react';
 import stampit from 'react-stampit';
-import Fromsy from 'formsy-react';
 import formComponent from './forms/form.jsx!';
 import i18n from './i18n';
-  
+
 const translation = i18n(navigator.language ? navigator.language : navigator.browserLanguage);
 const SignUpFormReference = document.getElementById('SignUp');
 const FormComponent = formComponent(React)
