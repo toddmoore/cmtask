@@ -6,7 +6,8 @@ var reload = browserSync.reload;
 gulp.task('sass', function() {
     return sass('./public/scss/main.scss', {
       container: 'gulp-ruby-sass',
-      verbose: true
+      verbose: true,
+      style: 'compressed'
     })
     .pipe(gulp.dest('./public/stylesheets'))
     .on('error', function (err) {
