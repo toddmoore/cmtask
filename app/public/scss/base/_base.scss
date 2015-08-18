@@ -225,13 +225,17 @@ select {
   font-size: map-get($type, 100);
   color: lighten(red, 35%);
   position: absolute;
-  right: 0;
+  @include mq(mobile, tablet){
+      right: 0;
+  }
+
 }
 .js-message-validationError {
   @include span(16);
   margin-bottom: 1rem;
   color: lighten(red, 35%);
   font-size: map-get($type, 200);
+  @include transition(all .25s ease-in-out);
 }
 .js-message-success {
   @extend .js-message-validationError;

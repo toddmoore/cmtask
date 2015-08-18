@@ -29,7 +29,7 @@ const translations = {
       "label": "Create my account"
     },
     "signupForm": {
-      "success": "Thank you for your feedback",
+      "success": "You've signed up! WooHoo! Get a beer.",
       "validationError": "Sorry, but please complete the required fields"
     }
   }
@@ -38,5 +38,9 @@ const translations = {
 export default (language)=> {
   // Could return translations via fetch
   // instead of hardcoding
+
+  // Hack instad of writing english locale languages
+  language == "en-au" ? language = "en-us" : null;
+  language == "en-gb" ? language = "en-us" : null;
   return translations[language.toLowerCase()];
 }

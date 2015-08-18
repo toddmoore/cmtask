@@ -212,8 +212,10 @@ select {
 .js-error {
   font-size: 0.7rem;
   color: #ffb3b3;
-  position: absolute;
-  right: 0; }
+  position: absolute; }
+  @media (min-width: 20em) and (max-width: 46.24em) {
+    .js-error {
+      right: 0; } }
 
 .js-message-validationError, .js-message-success {
   width: 100%;
@@ -222,7 +224,10 @@ select {
   margin-right: 0;
   margin-bottom: 1rem;
   color: #ffb3b3;
-  font-size: 0.8rem; }
+  font-size: 0.8rem;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out; }
 
 .js-message-success {
   color: #34ff34; }
