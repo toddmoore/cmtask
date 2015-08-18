@@ -7,6 +7,11 @@ export default React => {
       classNames: [],
       palette: ""
     },
+    componentWillMount(){
+      this.setState({
+        classNames: this.setClasses()
+      });
+    },
     render(){
       let t = this.props.translation;
       if(!t){

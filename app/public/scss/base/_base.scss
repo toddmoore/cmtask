@@ -225,7 +225,7 @@ select {
   font-size: map-get($type, 100);
   color: lighten(red, 35%);
   position: absolute;
-  @include mq(mobile, tablet){
+  @include mq(mobile, desktop){
       right: 0;
   }
 

@@ -20,6 +20,8 @@ pids
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build
+build.js
+build.js.map
 
 # Dependency directory
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git

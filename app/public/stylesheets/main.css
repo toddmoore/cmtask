@@ -213,7 +213,7 @@ select {
   font-size: 0.7rem;
   color: #ffb3b3;
   position: absolute; }
-  @media (min-width: 20em) and (max-width: 46.24em) {
+  @media (min-width: 20em) and (max-width: 61.24em) {
     .js-error {
       right: 0; } }
 
