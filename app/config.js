@@ -17,10 +17,10 @@ System.config({
     "babel": "npm:babel-core@5.8.22",
     "babel-runtime": "npm:babel-runtime@5.8.20",
     "core-js": "npm:core-js@0.9.18",
-    "input-placeholder-polyfill": "npm:input-placeholder-polyfill@1.0.0",
+    "formsy-react": "npm:formsy-react@0.14.1",
     "jsx": "github:floatdrop/plugin-jsx@1.1.0",
-    "placeholders-2": "npm:placeholders-2@3.0.2",
     "react": "npm:react@0.13.3",
+    "react-stampit": "npm:react-stampit@0.9.0",
     "github:floatdrop/plugin-jsx@1.1.0": {
       "react-tools": "npm:react-tools@0.13.3"
     },
@@ -229,6 +229,12 @@ System.config({
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
+    "npm:formsy-react@0.14.1": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.1",
+      "react": "npm:react@0.13.3"
+    },
     "npm:glob@4.2.2": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
       "events": "github:jspm/nodelibs-events@0.1.1",
@@ -280,6 +286,9 @@ System.config({
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "process": "github:jspm/nodelibs-process@0.1.1",
       "source-map": "npm:source-map@0.1.31"
+    },
+    "npm:lodash@3.10.1": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:miller-rabin@2.0.1": {
       "bn.js": "npm:bn.js@2.2.0",
@@ -340,6 +349,11 @@ System.config({
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
+    "npm:react-stampit@0.9.0": {
+      "lodash": "npm:lodash@3.10.1",
+      "process": "github:jspm/nodelibs-process@0.1.1",
+      "stampit": "npm:stampit@2.1.0"
+    },
     "npm:react-tools@0.13.3": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "commoner": "npm:commoner@0.10.3",
@@ -396,6 +410,12 @@ System.config({
       "amdefine": "npm:amdefine@1.0.0",
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
+    "npm:stampit@2.1.0": {
+      "assert": "github:jspm/nodelibs-assert@0.1.0",
+      "events": "github:jspm/nodelibs-events@0.1.1",
+      "lodash": "npm:lodash@3.10.1",
+      "supermixer": "npm:supermixer@1.0.2"
+    },
     "npm:stream-browserify@1.0.0": {
       "events": "github:jspm/nodelibs-events@0.1.1",
       "inherits": "npm:inherits@2.0.1",
@@ -403,6 +423,9 @@ System.config({
     },
     "npm:string_decoder@0.10.31": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
+    },
+    "npm:supermixer@1.0.2": {
+      "lodash": "npm:lodash@3.10.1"
     },
     "npm:through@2.3.8": {
       "process": "github:jspm/nodelibs-process@0.1.1",

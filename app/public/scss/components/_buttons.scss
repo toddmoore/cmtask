@@ -7,6 +7,9 @@
   display: inline-block;
   text-transform: uppercase;
   border: none;
+  /****
+  * Component Variations
+  */
   @at-root {
     .component-button--default {
       background-color: map-get($palette, 900);

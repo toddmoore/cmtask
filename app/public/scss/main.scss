@@ -3,57 +3,14 @@
 @import 'http://fonts.googleapis.com/css?family=Open+Sans:300,400,700';
 @import '/src/bower_components/sass-mq/_mq.scss';
 
+@import 'base/variables';
+@import 'base/base';
 
-
-
-
-//sections
-//menus
-//header
-//buttons
-//cards
-
-
-
-
-
-
-
-
-
-.component-form {
-  .component-form__field {
-    margin-bottom: 1rem;
-    &.component-form__field--half-width {
-      @include span(7.5 of 16);
-      @include gutters(1rem);
-      @include mq($until: desktop){
-        @include span(16 of 16);
-      }
-    }
-    &.component-form__field--full-width {
-      @include span(16 of 16);
-    }
-  }
-
-  @at-root {
-    .component-form--sign-up {
-      @include span(8 of 16);
-      @include push(4);
-      @include mq(mobile,tablet){
-        @include span(14 of 16);
-        @include push(1);
-      }
-      .component-section--sign-up__confirm {
-        text-align: center;
-        margin: 1rem auto 1.75rem auto;
-        label {
-          font-size: map-get($type, 100);
-        }
-      }
-    }
-    .component-form__field--select {
-      overflow: hidden;
-    }
-  }
-}
+@import 'components/sections';
+@import 'components/headers';
+@import 'components/menus';
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/wells';
+@import 'components/images';
+@import 'components/forms';

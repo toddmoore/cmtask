@@ -34,6 +34,8 @@ gulp.task('develop', function(){
   // watch for changes
   gulp.watch([
     'lib/**/*.js',
+    'lib/*.js',
+    'lib/*.jsx',
     'lib/**/*.jsx',
     'index.html',
   ]).on('change', reload);

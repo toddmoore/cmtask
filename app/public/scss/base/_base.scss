@@ -7,211 +7,276 @@ body {
   @include mq(mobile,tablet) {
     background-color: map-get($palette, 900);
   }
-  @at-root {
-    * {
-      -webkit-font-smoothing: antialiased;
-    }
-    h1 {
-      margin: 0;
-    }
-    a {
-      text-decoration: none;
-    }
-    p, dt {
-      font-weight: 400;
-      font-size: map-get($type, 300);
-    }
-    dd {
-      margin: 0;
-    }
-    blockquote {
-      quotes: '\201c' '\201d';
-      text-indent: 1.5rem;
-      text-align: left;
-      position: relative;
-      line-height: 1.5;
-      margin: 0;
-      font-size: map-get($type, 300);
-      &:before {
-        content: open-quote;
-        font-family: "Georgia";
-        left: -1.333rem;
-        top: -0.5rem;
-        position: absolute;
-        font-size: map-get($type, 700);
-      }
-    }
-    cite {
-      display: inline-block;
-      font-size: map-get($type, 300);
-      font-style: normal;
-      text-align: left;
-      width: 100%;
-      color: map-get($palette, 180);
-    }
-    label {
-      width: 100%;
-      line-height: 1.75;
-      text-align: left;
-      display: inline-block;
-      font-size: map-get($type, 300);
-    }
+}
 
-    input,
-    textarea {
-      background-color: map-get($palette, 100);
-      color: map-get($palette, 600);
-    }
+* {
+  -webkit-font-smoothing: antialiased;
+}
+h1 {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+p, dt {
+  font-weight: 400;
+  font-size: map-get($type, 300);
+}
+dd {
+  margin: 0;
+}
+blockquote {
+  quotes: '\201c' '\201d';
+  text-indent: 1.5rem;
+  text-align: left;
+  position: relative;
+  line-height: 1.5;
+  margin: 0;
+  font-size: map-get($type, 300);
+  &:before {
+    content: open-quote;
+    font-family: "Georgia";
+    left: -1.333rem;
+    top: -0.5rem;
+    position: absolute;
+    font-size: map-get($type, 700);
+  }
+}
+cite {
+  display: inline-block;
+  font-size: map-get($type, 300);
+  font-style: normal;
+  text-align: left;
+  width: 100%;
+  color: map-get($palette, 180);
+}
+label {
+  width: 100%;
+  line-height: 1.75;
+  text-align: left;
+  display: inline-block;
+  font-size: map-get($type, 300);
+}
 
-    input[type=text],
-    input[type=email],
-    input[type=password],
-    input[type=number],
-    textarea,
-    select
-    {
-      @include box-sizing(content-box);
-      @include appearance(none);
+input,
+textarea {
+  background-color: map-get($palette, 100);
+  color: map-get($palette, 600);
+}
 
-      outline: none;
-      display: block;
-      width: 100%;
-      padding: .8rem .6rem;
-      width: calc(100% - 1rem);
-      border: none;
-      border-radius: 0px;
-      cursor: text;
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=number],
+textarea,
+select
+{
+  @include box-sizing(content-box);
+  @include appearance(none);
 
-    }
-    select {
-      width: 120%;
+  outline: none;
+  display: block;
+  width: 100%;
+  padding: .8rem .6rem;
+  width: calc(100% - 1rem);
+  border: none;
+  border-radius: 0px;
+  cursor: text;
+
+}
+select {
+  width: 120%;
+  cursor: pointer;
+  @include user-select(none);
+}
+
+.select {
+  position: relative;
+  &:after {
+    content: "";
+    width: 0;
+    position: absolute;
+    right: .75rem;
+    top: 50%;
+    margin-top: -3px;
+    border-width: 6px 4px;
+    border-style: solid;
+    pointer-events: none;
+    border-color: map-get($palette, 600) transparent transparent transparent;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 2rem;
+    pointer-events: none;
+    background-color: map-get($palette, 200);
+  }
+}
+
+.a--default {
+  color: map-get($palette, 400);
+  font-size: map-get($type, 200);
+}
+.ul--stripped {
+  padding: 0;
+  margin: 0;
+  li {
+    list-style-type: none;
+    display: inline-block;
+  }
+}
+
+.input--checkbox {
+  label {
+    position: relative;
+    width: auto;
+    padding-left: 2rem;
+  }
+  [type=checkbox]{
+    position: absolute;
+    left: -9999px;
+  }
+  [type=checkbox] {
+    cursor: pointer;
+    + label{
       cursor: pointer;
-      @include user-select(none);
-    }
-
-    .select {
-      position: relative;
-      &:after {
-        content: "";
-        width: 0;
-        position: absolute;
-        right: .75rem;
-        top: 50%;
-        margin-top: -3px;
-        border-width: 6px 4px;
-        border-style: solid;
-        pointer-events: none;
-        border-color: map-get($palette, 600) transparent transparent transparent;
-      }
       &:before {
         content: "";
         position: absolute;
-        right: 0;
-        height: 100%;
-        width: 2rem;
-        pointer-events: none;
-        background-color: map-get($palette, 200);
+        left: 2px;
+        top: -2px;
+        width: 1.25rem;
+        height: 1.15rem;
+        background-color: map-get($palette, 100);
       }
-    }
-
-    .a--default {
-      color: map-get($palette, 400);
-      font-size: map-get($type, 200);
-    }
-    .ul--stripped {
-      padding: 0;
-      margin: 0;
-      li {
-        list-style-type: none;
-        display: inline-block;
-      }
-    }
-    .input--checkbox {
-      label {
-        position: relative;
-        width: auto;
-        padding-left: 2rem;
-      }
-      [type=checkbox]{
+      &:after {
+        content: "";
         position: absolute;
-        left: -9999px;
-      }
-      [type=checkbox] {
-        + label{
-          &:before {
-            content: "";
-            position: absolute;
-            left: 2px;
-            top: -2px;
-            width: 1.25rem;
-            height: 1.15rem;
-            background-color: map-get($palette, 100);
-          }
-          &:after {
-            content: "";
-            position: absolute;
-            left: 7px;
-            top: 4px;
-            width: 0px;
-            height: 0px;
-            background-color: transparent;
-            border: 6px solid map-get($palette, 600);
-            border-top-style: none;
-            border-right-style: none;
-            @include transform(rotate(0deg));
-            opacity: 0;
-            @include transition(all .25s ease-in-out);
-          }
-        }
-        &:checked + label {
-          &:after {
-            opacity: 1;
-            width: 1rem;
-            height: 8px;
-            left: 2px;
-            top: -4px;
-            @include transform(rotate(-45deg));
-          }
-        }
-      }
-    }
-    .input--reversed {
-      background-color: map-get($palette, 600);
-      border: none;
-      color: map-get($palette, 300);
-      @include placeholder {
-        color: map-get($palette, 300);
-      }
-      &.input--checkbox {
+        left: 7px;
+        top: 4px;
+        width: 0px;
+        height: 0px;
         background-color: transparent;
-        label {
-          color: map-get($palette, 100);
-        }
-        [type=checkbox] {
-          + label{
-            &:before {
-              background-color: map-get($palette,600);
-            }
-            &:after {
-              border-color: map-get($palette, 100);
-            }
-          }
-        }
+        border: 6px solid map-get($palette, 600);
+        border-top-style: none;
+        border-right-style: none;
+        @include transform(rotate(0deg));
+        opacity: 0;
+        @include transition(all .25s ease-in-out);
       }
     }
-    .select--reversed {
+    &:checked + label {
       &:after {
-        border-color: map-get($palette, 500) transparent transparent transparent;
+        opacity: 1;
+        width: 1rem;
+        height: 8px;
+        left: 2px;
+        top: -4px;
+        @include transform(rotate(-45deg));
       }
-      &:before {
-        background-color: map-get($palette, 700);
-      }
-
     }
   }
+}
+
+.input--reversed {
+  background-color: map-get($palette, 600);
+  border: none;
+  color: map-get($palette, 300);
+  @include placeholder {
+    color: map-get($palette, 300);
+  }
+  &.input--checkbox {
+    background-color: transparent;
+    label {
+      color: map-get($palette, 100);
+    }
+    [type=checkbox] {
+      + label{
+        &:before {
+          background-color: map-get($palette,600);
+        }
+        &:after {
+          border-color: map-get($palette, 100);
+        }
+      }
+    }
+  }
+}
+
+.select--reversed {
+  &:after {
+    border-color: map-get($palette, 500) transparent transparent transparent;
+  }
+  &:before {
+    background-color: map-get($palette, 700);
+  }
+}
+
+.js-rtError {
+  padding: 1rem;
+  border: 1px solid red;
+  color: red;
+  background-color: map-get($palette, 100);
+  clear:both;
+}
+.js-error {
+  font-size: map-get($type, 100);
+  color: lighten(red, 35%);
+  position: absolute;
+  right: 0;
+}
+.js-message-validationError {
+  @include span(16);
+  margin-bottom: 1rem;
+  color: lighten(red, 35%);
+  font-size: map-get($type, 200);
+}
+.js-message-success {
+  @extend .js-message-validationError;
+  color: lighten(green, 35%);
+}
+.js-loading {
+  &:after {
+    content: "";
+    position: absolute;
+    top: -2rem;
+    @include mq(mobile, tablet) {
+      top: -1rem;
+    }
+    display: block;
+    z-index: 2000;
+    left: 50%;
+    margin-left: -7px;
+    width: 14px;
+    height: 14px;
+    border: solid 2px transparent;
+    border-top-color: map-get($palette, 100);
+    border-left-color:  map-get($palette, 100);
+    border-radius: 10px;
+    animation: loader-rotate 400ms linear infinite;
+  }
+}
+
+[data-result='js-form-validationError']{
+  [data-valid="false"]{
+    input {
+      border: 1px solid lighten(red, 35%);
+    }
+  }
+}
+
+@include keyframes(loader-rotate) {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(359deg); }
 }
 
 .container {
   position: relative;
   @include container;
+}
+
+.hidden {
+  display: none !important;
 }

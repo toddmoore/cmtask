@@ -11,8 +11,10 @@
   "jspm": {
     "format": "es6",
     "dependencies": {
+      "formsy-react": "npm:formsy-react@^0.14.1",
       "jsx": "github:floatdrop/plugin-jsx@^1.1.0",
-      "react": "npm:react@^0.13.3"
+      "react": "npm:react@^0.13.3",
+      "react-stampit": "npm:react-stampit@^0.9.0"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.1.13",

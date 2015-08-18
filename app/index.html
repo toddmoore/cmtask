@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Pipeline Test</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
         <meta name="copyright" content="&copy; 2015 Pipeline" />
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="public/stylesheets/main.css">
@@ -31,7 +31,7 @@
         <section class="component-section component-section--main-navigation">
           <div class="container">
             <header class="component-header component-header--logo">
-              <h1><a class="a--default" href="#">
+              <h1 class="component-header__title"><a class="a--default component-header__link" href="#">
                 Pipeline</a></h1>
             </header>
           </div>
@@ -40,7 +40,7 @@
         <section class="component-section component-section--reversed component-section--fat-top component-section--hero">
           <div class="container">
             <header class="component-header">
-              <h1>Prototype your ideas in minutes</h1>
+              <h1 class="component-header__title">Prototype your ideas in minutes</h1>
               <p class="component-header__sub-heading">With a few clicks, transform any wireframe or mockup into a fully-interactive prototype.</p>
             </header>
             <img class="component-image--hero" src="public/images/browser-chrome.svg" srcset="public/images/browser-chrome.svg 500w" sizes="500px"  alt="Graphic of a chat bubble" />
@@ -50,7 +50,7 @@
         <section class="component-section">
           <div class="container">
             <header class="component-header">
-              <h1>Improve your workflow</h1>
+              <h1 class="component-header__title">Improve your workflow</h1>
             </header>
 
             <div class="component-cards">
@@ -108,54 +108,57 @@
         <section class="component-section component-section--reversed component-section--sign-up component-section--fat-top">
           <div class="container">
             <header class="component-header">
-              <h1>Sign up for beta access.</h1>
+              <h1 class="component-header__title">Sign up for beta access.</h1>
             </header>
-            <form class="component-form component-form--sign-up" action="index.html" method="post">
-              <ul  class="ul--stripped">
-                <li class="component-form__field component-form__field--half-width">
-                  <label>
-                    Full Name
-                    <input placeholder="e.g. Paul Irish" class="input--reversed" type="text" name="name" value="">
-                  </label>
-                </li>
-                <li class="component-form__field component-form__field--half-width">
-                  <label>
-                    Email address
-                    <input placeholder="email@example.com" class="input--reversed" type="email" name="email" value="">
-                  </label>
-                </li>
-                <li class="component-form__field component-form__field--half-width">
-                  <label>
-                    Password
-                    <input placeholder="Strong like coffee" class="input--reversed" type="password" name="password" value="">
-                  </label>
-                </li>
-                <li class="component-form__field component-form__field--select component-form__field--half-width">
-                  <label>
-                    How did you hear about this?
+            <div id="SignUp">
+              <form class="component-form component-form--sign-up" action="index.html" method="post">
+                <ul  class="ul--stripped">
+                  <li class="component-form__field component-form__field--half-width">
+                    <label>
+                      Full Name
+                      <input placeholder="e.g. Paul Irish" class="input--reversed" type="text" name="name" value="" required>
+                    </label>
+                  </li>
+                  <li class="component-form__field component-form__field--half-width">
+                    <label>
+                      Email address
+                      <input placeholder="email@example.com" class="input--reversed" type="email" name="email" value="" required>
+                    </label>
+                  </li>
+                  <li class="component-form__field component-form__field--half-width">
+                    <label>
+                      Password
+                      <input placeholder="Strong like coffee" class="input--reversed" type="password" name="password" value="" required>
+                    </label>
+                  </li>
+                  <li class="component-form__field component-form__field--select component-form__field--half-width">
+                    <label for="source">
+                      How did you hear about this?
+                    </label>
                     <div class="select select--reversed">
-                      <select class="input--reversed" name="source">
+                      <select id="source" class="input--reversed" name="source" required>
                           <option>Twitter</option>
                           <option>Facebook</option>
                           <option>Google</option>
                           <option>The magical wizard of lala land</option>
                       </select>
                     </div>
-                  </label>
-                </li>
-                <li class="component-form__field input--checkbox input--reversed component-form__field--full-width component-section--sign-up__confirm">
-                    <input  type="checkbox" name="confirm" id="confirm" value=""> <label for="confirm"> I want to be added to the email list (we send monthly). </label>
-                </li>
-                <li class="component-form__field component-form__field--full-width">
-                  <button class="component-button component-button--square" type="button" name="button">Create my account</button>
-                </li>
-              </ul>
-            </form>
+                  </li>
+                  <li class="component-form__field input--checkbox input--reversed component-form__field--full-width component-section--sign-up__confirm">
+                      <input  type="checkbox" name="confirm" id="confirm" value="" required> <label for="confirm"> I want to be added to the email list (we send monthly). </label>
+                  </li>
+                  <li class="component-form__field component-form__field--full-width">
+                    <button class="component-button component-button--square" type="button" name="button">Create my account</button>
+                  </li>
+                </ul>
+              </form>
+            </div>
           </div>
         </section>
 
         <section class="component-section component-section--reversed component-section--footer">
           <div class="container">
+            <h1 class="hidden">Footer</h1>
             <footer>
               <small>Copyright &copy; Pipline test 2015</small>
             </footer>
@@ -163,14 +166,13 @@
 
         </section>
 
-
+        <script charset="utf-8" src="jspm_packages/system.js"></script>
+        <script  src="config.js"></script>
+        <script>
+          System.import('lib/index.jsx!');
+        </script>
+        <!--[if lte IE 9]>
+          <script type="text/javascript" src="public/scripts/placeholders.min.js"></script>
+        <![endif]-->
     </body>
-    <!--[if lte IE 9]>
-    <script type="text/javascript" src="public/scripts/placeholders.min.js"></script>
-    <![endif]-->
-    <script charset="utf-8" src="jspm_packages/system.js"></script>
-    <script  src="config.js"></script>
-    <script>
-      System.import('lib/index');
-    </script>
 </html>

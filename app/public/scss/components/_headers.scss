@@ -3,21 +3,22 @@
   @include mq(mobile,tablet){
     margin-bottom: 1.5rem;
   }
-  h1 {
+  .component-header__title {
     font-weight: 300;
   }
   .component-header__sub-heading {
     margin-top: .3333rem;
   }
-
+  /****
+  * Component Variations
+  */
   @at-root {
     .component-header--logo {
       text-align: left;
       margin-bottom: 0;
       position: relative;
-
       @include span(3);
-      h1 {
+      .component-header__title {
         position: relative;
         padding-left: 3rem;
         font-size: map-get($type, 300);
@@ -30,9 +31,9 @@
           left: 7px;
           top: -.5rem;
         }
-      }
-      a {
-        font-weight: 700;
+        .component-header__link {
+          font-weight: 700;
+        }
       }
     }
   }
